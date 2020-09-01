@@ -206,9 +206,10 @@
     text-decoration: none;
   }
   &:hover {
+    text-decoration: none;
     transform: rotateX(360deg);
     box-shadow: 2px 4px 6px rgba(150, 150, 150, 1);
-    transition: transform .8s cubic-bezier(0, 0.55, 0.45, 1);
+    transition: transform .9s cubic-bezier(0, 0.55, 0.45, 1);
   }
 }
 

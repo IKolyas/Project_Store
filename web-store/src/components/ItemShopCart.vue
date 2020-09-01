@@ -2,9 +2,19 @@
    <div class="prodHeaders row col-12 d-flex justify-content-between mt-4 mb-3 text-uppercase">
         <div class="row col-5 img-responsive">
             <div class="productDet d-flex">
-                <img :src="item.img" :alt="item.name">
+                <router-link :to="{name: 'SinglePage', params: item}">
+                    <img :src="item.img" :alt="item.name">
+                </router-link>
                 <div class="ProdDetText d-flex flex-column ml-3 text-capitalize ">
-                    <h3>{{item.name}}</h3> <span>Color: <mark>Red</mark></span> <span>Size: <mark>Xll</mark></span>
+                    <router-link class="item__name" :to="{name: 'SinglePage', params: item}">
+                        <h3>{{item.name}}</h3> 
+                    </router-link>
+                    <span>Color: 
+                        <mark>Red</mark>
+                    </span> 
+                    <span>Size: 
+                        <mark>Xll</mark>
+                    </span>
                 </div>
             </div>
         </div>
@@ -13,10 +23,13 @@
             <div class="ProdHeadInp col-12 col-md-3 d-flex justify-content-center align-items-center">
                 <label>
                     <input 
-                    type="number" 
+                    type="number"
+                    min="1"
+                    max="20"
+                    step="1"
                     v-model.number="count"
                     @change="quantity(item, count)"
-                    required pattern="^[ 0-9]+$"
+                    required pattern="^[0-9]+$"
                    >
                     
                 </label></div>
@@ -46,13 +59,8 @@
          props: {
             type: {
                 type: String,
-                default: 'catalog'
             },
             item: { type: Object }
-        },
-
-        computed: {
-
         },
 
         methods: {
@@ -75,5 +83,7 @@
 </script>
 
 <style>
-
+.item__name:hover {
+    text-decoration: none;
+}
 </style>

@@ -10,7 +10,7 @@
                 </div>
                 <img :src="item.img" class="card-img-top" :alt="item.name">
                 <div class="psevProdCardBody card-body d-flex flex-column align-content-start pb-0 px-0">
-                    <router-link :to="{name: 'SinglePage'}">
+                    <router-link :to="{name: 'SinglePage', params: item}">
                     <a href="#" class="card-text px-3">{{ item.name }}</a>
                     </router-link>
                     <div class="d-flex justify-content-between align-items-center">
@@ -28,7 +28,7 @@
         <template v-if="type === 'basket'">
             <div>
                 <div class="d-flex px-3 justify-content-between align-items-center py-1">
-                    <router-link :to="{name: 'SinglePage'}">
+                    <router-link :to="{name: 'SinglePage', params: item}">
                         <a href="#"><img :src="item.img" :alt="item.name"></a>
                     </router-link>
                     <div class="d-flex flex-column justify-content-center align-items-center product__text">
@@ -66,7 +66,8 @@
         },
         methods: {
             addToCard(item) {
-                this.$store.commit('add', item);
+                let count = 1;
+                this.$store.commit('add', {item, count});
             },
             removeCard(item) {
                 this.$store.commit('remove', item);

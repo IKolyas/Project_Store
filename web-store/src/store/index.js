@@ -24,11 +24,10 @@ export default new Vuex.Store({
       state.itemsBasket.forEach((item) => (state.basketSum += +item.price * +item.quantity));
     },
 
-    add(state, item) {
+    add(state, {item, count}) {
       let find = state.itemsBasket.find((el) => el.id == item.id);
       if (!find) {
-          let newItem = Object.assign({}, item, {quantity: 1,});
-          console.log(newItem);
+          let newItem = Object.assign({}, item, {quantity: count});
           post(state.basketURL, newItem).then((res) => {
           if (res.status) {
             state.itemsBasket.push(newItem);
@@ -37,9 +36,9 @@ export default new Vuex.Store({
           }
           });
       } else {
-          put(`${state.basketURL}/${item.id}`, 1).then((res) => {
+          put(`${state.basketURL}/${item.id}`, count).then((res) => {
           if (res.status) {
-              find.quantity++;
+              find.quantity += count;
           } else {
               console.log("Server err");
           }
@@ -69,9 +68,8 @@ export default new Vuex.Store({
     },
 
     quantity(state, {item, count}) {
-      console.log(count)
       let find = state.itemsBasket.find((el) => el.id == item.id);
-      put(`${state.basketURL}/${item.id}`, +count).then((res) => {
+      put(`${state.basketURL}/${item.id}`, count).then((res) => {
         if (res.status) {
             find.quantity = count;
         } else {
@@ -81,6 +79,7 @@ export default new Vuex.Store({
     },
 
     dell(state, item) {
+      let find = state.itemsBasket.find((el) => el.id == item.id);
       del(`${state.basketURL}/${item.id}`).then((res) => {
           if (res.status) {
             state.itemsBasket.splice(state.itemsBasket.indexOf(find), 1);

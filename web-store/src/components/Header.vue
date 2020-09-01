@@ -44,9 +44,9 @@
                     </transition>
 
                 </div>
-                <div class="btn-group">
+                <div class="btn-group ml-4">
                     <router-link :to="{name: 'CheckOut'}"> 
-                        <button type="button" class="btn btn-danger ml-4">My Account</button>
+                        <button type="button" class="btn btn-danger ">My Account</button>
                     </router-link>
                     <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

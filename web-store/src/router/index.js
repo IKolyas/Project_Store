@@ -23,7 +23,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/single-page',
+    path: '/single-page/:id',
     name: 'SinglePage',
     component: SinglePage,
     props: true,
@@ -40,6 +40,7 @@ const routes = [
     component: ShoppingCart,
     props: true,
   }
+
 ]
 
 

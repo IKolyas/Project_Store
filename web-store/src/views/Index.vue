@@ -69,11 +69,13 @@
 
         </div>
         <div class="container d-flex justify-content-center align-items-center mb-5">
-            <router-link :to="{name: 'Products'}">
-                <div class="bBa__container">
-                    <a class="d-flex justify-content-center align-items-center"
-                       href="#">Browse All Product
-                        <i class="pl-2 fa fa-long-arrow-right" aria-hidden="true"></i>
+            <router-link class="bBa__container" :to="{name: 'Products'}">
+                <div>
+                    <a 
+                    class="d-flex justify-content-center align-items-center"
+                    href="#">
+                    Browse All Product
+                    <i class="pl-2 fa fa-long-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </router-link>
@@ -128,9 +130,7 @@
             Catalog,
         },
         methods: {
-            addItem(item) {
-                this.$parent.$refs.head.$refs.bask.add(item)
-            },
+
         },
     }
 </script>
