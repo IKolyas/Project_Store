@@ -110,10 +110,13 @@
                                 src="https://raw.githubusercontent.com/IKolyas/static/master/GBProject/img/procent.png"
                                 alt="..."
                                 class="col-lg-3 pb-2 mx-2">
-                            <div class="col-lg-9 p-0"><h4>Quality assurance</h4>
+                            <div class="col-lg-9 p-0">
+                                <h4>Quality assurance</h4>
                                 <p>Worldwide delivery on all. Authorit tively morp next-generation innovation with
                                     extensive
-                                    models</p></div>
+                                    models
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,9 +131,6 @@
     export default {
         components: {
             Catalog,
-        },
-        methods: {
-
         },
     }
 </script>

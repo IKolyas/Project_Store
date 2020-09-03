@@ -7,13 +7,12 @@ module.exports = {
         basket.contents.push(item);
         return basket;
     },
-    change(basket, id, quantity) {
+    change(basket, id, quantity, size=null, color=null) {
+        
         let find = _search(basket.contents, id);
-        if (quantity === 1 || quantity === -1) {
-            find.quantity += quantity;
-        } else {
-            find.quantity = quantity;
-        }
+        ((size === null) & (color === null)) ? find.quantity = quantity : find.quantity += quantity;
+        find.color = color;
+        find.size = size;
         return basket;
     },
     delete(basket, id) {

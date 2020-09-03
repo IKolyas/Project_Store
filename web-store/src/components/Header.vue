@@ -1,7 +1,12 @@
 <template>
     <header class="container">
         <div class="row d-flex align-items-center justify-content-center mb-3 mt-5 mt-sm-0 pt-2">
-            <a href="#" class="logo col-7 col-sm-4 col-lg-2 d-flex justify-content-center pl-5">Bran<span>d</span></a>
+            <router-link 
+                :to="{name: 'Index'}" 
+                class="logo col-7 col-sm-4 col-lg-2 d-flex justify-content-center pl-5">
+                Bran
+                <span>d</span>
+            </router-link >
             <div class="input-group searchBrowse col-sm-8 col-lg-5 pr-sm-5 mb-1">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center justify-content-center"
@@ -45,8 +50,8 @@
 
                 </div>
                 <div class="btn-group ml-4">
-                    <router-link :to="{name: 'CheckOut'}"> 
-                        <button type="button" class="btn btn-danger ">My Account</button>
+                    <router-link :to="{name: 'CheckOut'}" tag="button" type="button" class="btn btn-danger"> 
+                        My Account
                     </router-link>
                     <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

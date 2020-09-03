@@ -10,10 +10,10 @@
                         <h3>{{item.name}}</h3> 
                     </router-link>
                     <span>Color: 
-                        <mark>Red</mark>
+                        <mark>{{item.color}}</mark>
                     </span> 
                     <span>Size: 
-                        <mark>Xll</mark>
+                        <mark>{{item.size}}</mark>
                     </span>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                     min="1"
                     max="20"
                     step="1"
-                    v-model.number="count"
-                    @change="quantity(item, count)"
+                    v-model.number="quantity"
+                    @change="tolalQuantity(item, quantity, item.size, item.color)"
                     required pattern="^[0-9]+$"
                    >
                     
@@ -53,7 +53,7 @@
         },
         data() {
             return {
-                count: 0,
+                quantity: 0,
             };
         },
          props: {
@@ -62,21 +62,16 @@
             },
             item: { type: Object }
         },
-
         methods: {
-            removeCard(item) {
-                this.$store.commit('remove', item);
-            },
-            quantity(item, count) {
-                this.$store.commit('quantity', {item, count});
+            tolalQuantity(item, quantity) {
+                this.$store.commit('tolalQuantity', {item, quantity});
             },
             dell(item) {
                 this.$store.commit('dell', item)
             }
-
         },
         mounted() {
-             this.count = this.item.quantity
+             this.quantity = this.item.quantity
         }
     }
 

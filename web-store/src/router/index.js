@@ -40,9 +40,7 @@ const routes = [
     component: ShoppingCart,
     props: true,
   }
-
 ]
-
 
 const router = new VueRouter({
   mode: 'history',

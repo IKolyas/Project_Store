@@ -50,7 +50,6 @@
         },
 
         computed: {
-            
             countingGoods() {
                 this.$store.commit('countingGoods');
                 this.basketSum = +this.$store.state.basketSum;

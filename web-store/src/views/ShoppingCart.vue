@@ -17,12 +17,10 @@
                 </div>
             </div>
             <div class="headerLine"></div>
-
                                         <!--    ITEM        -->
             <ItemShopCart v-for="item of $store.state.itemsBasket" type="basket" :item="item" :key="item.id" />
 
             <div class="headerLine"></div>
-
             <div class="container row d-flex justify-content-center justify-content-md-between mx-0 mt-5">
                 <div class="ccShoppingBut">
                     <button type="button">CLEAR SHOPPING CART</button>
@@ -101,14 +99,9 @@
                 return this.amount
             }
         },
-        methods: {
-
-        },
-
          mounted() {
             this.$store.commit('getCart');
         },
-        
     }
 </script>
 

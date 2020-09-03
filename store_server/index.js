@@ -41,7 +41,7 @@ server.post('/basket', (req, res) => {
 server.put('/basket/:id', (req, res) => {
     fs.readFile('./db/basket.json', 'utf-8', (err, data) => {
         if (!err) {
-            let newBasket = basket.change(JSON.parse(data), req.params.id, req.body.quantity);
+            let newBasket = basket.change(JSON.parse(data), req.params.id, req.body.quantity, req.body.size, req.body.color);
             writer('./db/basket.json', newBasket)
                 .then(status => {
                     if (status) {

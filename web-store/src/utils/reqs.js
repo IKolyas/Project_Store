@@ -11,11 +11,11 @@ export let post = (url, item) => {
     .then(status => status.json());
 }
 
-export let put = (url, quantity) => { //('/', -1)
+export let put = (url, quantity, size, color) => {
     return fetch(url, {
         method: 'PUT',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ quantity })
+        body: JSON.stringify({ quantity, size, color })
     })
     .then(status => status.json());
 }

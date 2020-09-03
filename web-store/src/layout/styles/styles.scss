@@ -119,9 +119,6 @@
   position: relative;
   max-width: 261px !important;
   align-items: center;
-  -webkit-transition: all .7s;
-  -moz-transition: all .7s;
-  -o-transition: all .7s;
 
   img {
     width: 261px;
@@ -501,14 +498,19 @@
     color: $mainTextColorP;
   }
 
-  .spansList {
+  .item-info {
     color: $mainTextColor;
 
-    span {
+    p {
       margin-left: 2px;
       margin-right: 2px;
       color: $mainThemeColor;
     }
+    span {
+      text-transform: uppercase;
+      color: $mainTextColor;
+    }
+    
   }
 
   .money {
@@ -523,14 +525,16 @@
     background-color: $mainThemeColor;
   }
 
-  .inpList {
+  .select-params {
+    
     font-size: 14px;
     line-height: 24px;
     font-weight: 700;
     color: #2f2f2f;
 
-    input {
-      max-width: 144px;
+    select, input {
+      text-transform: uppercase;
+      width: 144px;
       height: 35px;
       border: 1.0px solid #eaeaea;
     }
@@ -625,25 +629,30 @@
     input {
       width: 100%;
     }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      border-radius: 10px;
+      height: 5px;
+      width: 260px;
+      border: 1px solid #000;
+      background-color: $mainThemeColor;
+    }
+  
     input[type=range]::-webkit-slider-thumb {
       z-index: 1;
       position: relative;
       top: 2px;
       margin-top: -7px;
-
+      -webkit-appearance: none;
+      background: $mainThemeColor;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      cursor: pointer;
     }
   }
 
-  .irs--round {
-    top: -20px;
-    height: 30px;
-  }
-
-  .labInpProd {
-    input {
-      border: none;
-    }
-  }
   p {
     font-size: 1rem;
     color: $mainTextColorP;
@@ -666,29 +675,6 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #6f6e6e;
-  }
-
-  .inpScroll {
-    width: 260px;
-  }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    border-radius: 10px;
-    height: 5px;
-    width: 260px;
-    border: 1px solid #000;
-    background-color: $mainThemeColor;
-  }
-
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: $mainThemeColor;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: -5px;
   }
 
   .breadCrombProd {
@@ -718,47 +704,27 @@
 
 
 .sortProd {
-  height: 50px;
-
-  .input-group {
-    background-color: #ffffff;
-    border: 1.0px solid #ebebeb;
-
-    .input-group-prepend {
-
-      height: 30px;
-
+  
       select {
+        width: 100px;
         font-size: 14px;
         line-height: 26px;
         font-weight: 400;
-        color: #6f6e6e;
-
-        &:focus, &:active, &:hover {
-          box-shadow: none !important;
-          background-color: #ffffff !important;
-        }
+        color: $mainTextColor;
+        
+        
       }
 
       button {
-        border: none;
+        background-color: #c4c4c4;;
+        height: 30px;
+        border: 1px solid $mainTextColorP;
         color: $mainTextColor;
         font-size: 14px;
         line-height: 26px;
         font-weight: 400;
 
-        &:focus, &:active, &:hover {
-          box-shadow: none !important;
-          background-color: #ffffff !important;
-        }
       }
-
-    }
-
-    .custom-select {
-      height: 30px;
-    }
-  }
 }
 
 .paginationProduct {

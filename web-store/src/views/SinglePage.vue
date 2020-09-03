@@ -9,11 +9,8 @@
                     <div class="carousel-item active">
                         <img class="d-block w-100 corImg" :src="$route.params.img" :alt="$route.params.name">
                     </div>
-                    <div class="carousel-item ">
-                        <img class="d-block w-100 corImg" :src="$route.params.img" :alt="$route.params.name">
-                    </div>
-                    <div class="carousel-item ">
-                        <img class="d-block w-100 corImg" :src="$route.params.img" :alt="$route.params.name">
+                    <div class="carousel-item" v-for="img of $route.params.images" v-bind:key="img">
+                        <img class="d-block w-100 corImg" :src="img" :alt="$route.params.name">
                     </div>
                 </div>
                 <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev">
@@ -28,33 +25,36 @@
         </div>
         <main class="container productListContainer d-flex justify-content-center">
             <div class="productList row col-12  d-flex justify-content-center align-items-stretch py-4">
-                <span class="col-12 d-flex align-items-center justify-content-center">{{$route.params.name}}</span>
+                <span class="col-12 d-flex align-items-center justify-content-center">Category</span>
                 <div class="plrows col-12 d-flex align-items-stretch justify-content-center ">
                     <div class="plrow"></div>
                     <div class="plrow plrowActive"></div>
                     <div class="plrow"></div>
                 </div>
-                <h2 class="col-12 text-center">Moschino Cheap And Chic</h2>
+                <h2 class="col-12 text-center">{{$route.params.name}}</h2>
                 <p class="col-12 d-flex align-items-center justify-content-center">
-                    {{ $route.params.id }}
-                    Compellingly actualize fully
-                    researched
-                    processes before proactive outsourcing. Progressively syndicate
-                    collaborative architectures before cutting-edge services. Completely visualize parallel core
-                    competencies
-                    rather than exceptional portals.</p>
-                <div class="spansList col-12 d-flex align-items-stretch justify-content-center">
-                    <div class="mx-4"><span>MATERIAL:</span>COTTON</div>
-                    <div class="mx-4"><span>DESIGNER:</span>BINBURHAN</div>
+                    {{$route.params.description}}
+                </p>
+                <div class="item-info col-12 d-flex align-items-stretch justify-content-center">
+                    <p class="mx-4">MATERIAL: <span>{{$route.params.material}}</span></p>
+                    <p class="mx-4">DESIGNER: <span>BINBURHAN</span></p>
                 </div>
                 <div class="money col-12 d-flex align-items-stretch justify-content-center">${{$route.params.price}}</div>
                 <div class="lineList col-12 d-flex align-items-center justify-content-center"></div>
-                <div class="inpList row col-12 d-flex align-items-center justify-content-center">
+                <div class="select-params row col-12 d-flex align-items-center justify-content-center">
                     <label class="d-flex flex-column mx-4">CHOOSE COLOR
-                        <input type="text" class="pl-3 my-2" placeholder="red" pattern="^[a-zA-Z0-9]+$">
+                        <select class="px-2 mt-2" v-model="color">
+                            <option  
+                            v-for="color of $route.params.color" v-bind:key="color">{{color}}
+                            </option>
+                        </select>
                     </label>
                     <label class="d-flex flex-column mx-4">CHOOSE SIZE
-                        <input type="text" class="pl-3 my-2" placeholder="XXL" pattern="^[a-zA-Z0-9]+$">
+                        <select class="px-2 mt-2"  v-model="size">
+                            <option  
+                            v-for="size of $route.params.size" v-bind:key="size">{{size}}
+                            </option>
+                        </select>
                     </label>
                     <label class="d-flex flex-column mx-4 ">QUANTITY
                         <input 
@@ -63,14 +63,14 @@
                         max="50"
                         step="1"
                         v-model.number="count"
-                        class="pl-3 my-2"
+                        class="px-4 mt-2"
                         pattern="^[0-9]+$">
                     </label>
                 </div>
                 <div class="ButList col-12 d-flex justify-content-center align-items-center pb-5">
                     <button 
                     type="button" 
-                    @click="addToCard($route.params, count)"
+                    @click="addItem($route.params, count, size, color)"
                     >
                         <svg class="bi bi-cart2" width="1.6em" height="1.6em" viewBox="0 0 16 16" fill="currentColor"
                              xmlns="http://www.w3.org/2000/svg">
@@ -90,11 +90,9 @@
                 <!--CATALOG -->
                     <Catalog type="singlePage" />   
             
-
         </div>
     </div>
 </template>
-
 
 <script>
 
@@ -110,17 +108,19 @@
          data() {
             return {
                 count: 1,
+                color: '',
+                size: ''
             };
         },
 
         methods: {
-            addToCard(item, count) {
-                if (count > 1){
-                    this.$store.commit('quantity', {item, count})
+            addItem(item, count, size, color) {
+                let find = this.$store.state.itemsBasket.find((el) => el.id == item.id);
+                if (find) {
+                    this.$store.commit('quantity', {item, count, size, color})
                 } else {
-                    this.$store.commit('add', {item, count});
+                    this.$store.commit('add', {item, count, size, color});
                 }
-               
             },
         },
     }

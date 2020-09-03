@@ -9,12 +9,12 @@
                     </button>
                 </div>
                 <img :src="item.img" class="card-img-top" :alt="item.name">
-                <div class="psevProdCardBody card-body d-flex flex-column align-content-start pb-0 px-0">
+                <div class="psevProdCardBody card-body d-flex flex-column align-content-start pb-0 px-3">
                     <router-link :to="{name: 'SinglePage', params: item}">
-                    <a href="#" class="card-text px-3">{{ item.name }}</a>
+                        <a href="#" class="card-text">{{ item.name }}</a>
                     </router-link>
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="d-flex justify-content-between px-3">${{ item.price }}</p>
+                        <p class="d-flex justify-content-between">${{ item.price }}</p>
                         <button class="d-flex d-md-none justify-content-around"
                                 @click="addToCard(item)">
                             Add to Cart
@@ -44,7 +44,7 @@
                         </p>
                     </div>
                     <button name="remove" class="dell__Product fa fa-times-circle"
-                            @click="removeCard(item)"
+                            @click="removeCard(item, item.size, item.color)"
                             data-id="${item.id}"
                             aria-hidden="true">
                     </button>
@@ -65,16 +65,17 @@
             item: { type: Object }
         },
         methods: {
-            addToCard(item) {
-                let count = 1;
+            addToCard(item, count=1) {
                 this.$store.commit('add', {item, count});
             },
-            removeCard(item) {
-                this.$store.commit('remove', item);
+            removeCard(item, size, color) {
+                this.$store.commit('remove', {item, size, color});
             }
         },
         mounted() {
-            
+                this.$store.commit('getCatalog');
+                // this.$store.commit('filterItem', this.$store.state.priceFilter)
+                // this.$store.commit('filterItem', this.$store.state.priceFilter)
         }
     }
 </script>

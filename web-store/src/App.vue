@@ -29,6 +29,7 @@ export default {
     Navigation,
     Footer,
   },
+
 };
 </script>
 
