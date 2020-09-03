@@ -11,7 +11,7 @@ export default new Vuex.Store({
     itemsBasket: [],
     basketSum: null,
     basketURL: "/api/basket",
-    catalogUrl: '/api/catalog',
+    catalogUrl: "/api/catalog",
     qItemPages: 6,
     priceFilter: {
       min: 0,
@@ -27,11 +27,11 @@ export default new Vuex.Store({
             items.map(item => item.quantity = 1)
             state.items = [...items];
             state.itemsFiltered = [...state.items];
-            
         });
     },
 
     filterItem(state, priceFilter = {min: 100, max: 1000}) {
+      state.itemsFiltered = [...state.items];
       state.itemsFiltered = state.itemsFiltered
           .filter(item => priceFilter.min <= +item.price && +item.price <= priceFilter.max)
     },

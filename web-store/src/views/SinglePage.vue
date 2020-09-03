@@ -95,9 +95,9 @@
 </template>
 
 <script>
+    const Catalog = () => import('../components/Catalog.vue');
+    const Breadcrubm = () => import('../components/Breadcrumb.vue');
 
-    import Catalog from "../components/Catalog.vue";
-    import Breadcrubm from '../components/Breadcrumb.vue';
 
     export default {
         components: {
@@ -123,6 +123,9 @@
                 }
             },
         },
+        mounted() {
+
+        }
     }
 </script>
 

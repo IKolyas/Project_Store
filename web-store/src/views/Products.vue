@@ -206,6 +206,7 @@
 
                     <Catalog type="products" ref='catalogProducts'/>
 
+                    
                 </div>
             </div>
         </main>
@@ -239,8 +240,8 @@
 </template>
 
 <script>
-    import Catalog from "../components/Catalog.vue";
-    import Breadcrubm from '../components/Breadcrumb.vue'
+    const Catalog = () => import('../components/Catalog.vue');
+    const Breadcrubm = () => import('../components/Breadcrumb.vue');
 
 
     export default {
@@ -259,14 +260,19 @@
         },
 
         methods: {
+           
             setRangeSlider() {
                 if (this.priceFilter.min > this.priceFilter.max) {
                     [this.priceFilter.max, this.priceFilter.min] = [this.priceFilter.min, this.priceFilter.max]
                 };
                 this.$store.state.priceFilter = this.priceFilter
-                
             },
         },
+        mounted() {
+            this.$store.commit('getCatalog');
+            this.$store.commit('filterItem');
+        }
+
     }
 </script>
 

@@ -2,9 +2,12 @@
 @import "header";
 @import "footer";
 @import "media/mediaSM";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 //---------------------index-------------------------------
-
+body {
+  font-family: $font;
+}
 
 .topBanner {
   height: 615px;
@@ -526,7 +529,6 @@
   }
 
   .select-params {
-    
     font-size: 14px;
     line-height: 24px;
     font-weight: 700;
@@ -616,7 +618,6 @@
 }
 
 .price {
-  font-family: Arial, sans-serif;
   font-size: 8px;
 
   .range_slider {

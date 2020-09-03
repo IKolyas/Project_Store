@@ -126,7 +126,7 @@
 </template>
 <script>
 
-    import Catalog from "../components/Catalog.vue";
+    const Catalog = () =>  import("../components/Catalog.vue");
 
     export default {
         components: {

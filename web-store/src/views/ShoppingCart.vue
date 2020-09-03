@@ -79,8 +79,8 @@
 
 <script>
 
-    import Breadcrubm from "../components/Breadcrumb.vue"
-    import ItemShopCart from "../components/ItemShopCart.vue"
+    const Breadcrubm = () => import('../components/Breadcrumb.vue');
+    const ItemShopCart = () => import('../components/ItemShopCart.vue');
 
     export default {
         name: "ShoppingCart",

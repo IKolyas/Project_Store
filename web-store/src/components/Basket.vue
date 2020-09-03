@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import Item from "./Item.vue";
+    const Item = () => import('./Item.vue');
 
     export default {
         name: "basket",
@@ -51,18 +51,20 @@
 
         computed: {
             countingGoods() {
-                this.$store.commit('countingGoods');
-                this.basketSum = +this.$store.state.basketSum;
-                return this.basketSum
+              this.amount()
+              this.basketSum = this.$store.state.basketSum;
+              return this.basketSum
             },
         },
 
         methods: {
-
+            amount() {
+              this.$store.commit('countingGoods');
+            }
         },
 
         mounted() {
-            this.$store.commit('getCart');
+          this.$store.commit('getCart');
         },
     };
 </script>

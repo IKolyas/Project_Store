@@ -72,8 +72,7 @@
 
 <script>
 
-    import Basket from "./Basket.vue";
-
+    const Basket = () => import('./Basket.vue');
     export default {
         name: "Header",
         components: {

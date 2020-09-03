@@ -82,8 +82,8 @@
 
 <script>
 
-    import Item from "./Item.vue";
     import lodash from 'lodash'
+    const Item = () => import('./Item.vue');
 
     export default {
         components: {
@@ -105,15 +105,19 @@
             collections() {
                 this.$store.commit('filterItem', this.$store.state.priceFilter);
                 return this.paginate(this.$store.state.itemsFiltered);
+                
             },
+            
         },
 
         methods: {
-             setPage(page) {
+            setPage(page) {
                 this.pagination = this.paginator(this.$store.state.items.length, page);
+                
             },
             paginate(data) {
                 return lodash.slice(data, this.pagination.startIndex, this.pagination.endIndex + 1)
+                
             },
             paginator(totalItems, currentPage) {
                 let startIndex = (currentPage - 1) * this.$store.state.qItemPages,
@@ -128,8 +132,10 @@
         },
         created() {
             this.setPage(1);
-
         },
+        mounted() {
+            this.$store.commit('getCatalog');
+        }
     }
 </script>
 

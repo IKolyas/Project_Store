@@ -45,7 +45,8 @@
 </template>
 
 <script>
-    import Item from "./Item.vue";
+    const Item = () => import('./Item.vue');
+    
     export default {
         name: "ItemShopCart",
         components: {

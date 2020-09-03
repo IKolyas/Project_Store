@@ -73,9 +73,7 @@
             }
         },
         mounted() {
-                this.$store.commit('getCatalog');
-                // this.$store.commit('filterItem', this.$store.state.priceFilter)
-                // this.$store.commit('filterItem', this.$store.state.priceFilter)
+            
         }
     }
 </script>

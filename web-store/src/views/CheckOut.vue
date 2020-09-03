@@ -178,7 +178,8 @@
 </template>
 
 <script>
-import Breadcrubm from '../components/Breadcrumb.vue'
+    const Breadcrubm = () => import('../components/Breadcrumb.vue');
+    
     export default {
         name: "CheckOut",
         components: {
