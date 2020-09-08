@@ -151,11 +151,11 @@
   margin-right: 10px;
 }
 .list-enter-active, .list-leave-active {
-  transition: all 1s;
+  transition: all .5s;
 }
 .list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(70px);
 }
 
 </style>

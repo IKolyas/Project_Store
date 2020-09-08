@@ -12,7 +12,7 @@
           <router-link :to="{name: 'CheckOut'}">
             <a
               href="#"
-              class="btn btn-primary btn-lg buttMyAccount mt-4 d-flex align-items-center justify-content-center"
+              class="btn btn-primary btn-lg my_account mt-4 d-flex align-items-center justify-content-center"
               role="button"
               aria-pressed="true"
             >Checkout</a>
@@ -20,7 +20,7 @@
           <router-link :to="{name: 'ShoppingCart'}">
             <a
               href="#"
-              class="btn btn-primary btn-lg buttMyAccount my-2 d-flex align-items-center justify-content-center"
+              class="btn btn-primary btn-lg my_account my-2 d-flex align-items-center justify-content-center"
               role="button"
               aria-pressed="true"
             >Go to cart</a>

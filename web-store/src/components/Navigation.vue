@@ -44,7 +44,7 @@
                             <a class="subMenuLink" href="#">Sweaters/Knits</a>
                             <a class="subMenuLink" href="#">Jackets/Coats</a>
                             <img src="https://raw.githubusercontent.com/IKolyas/static/master/GBProject/img/subMenu.jpg"
-                                 alt="subMan" class="mt-3">
+                                 alt="subMan" class="mt-3 submenu__img">
                         </li>
                     </ul>
                 </li>

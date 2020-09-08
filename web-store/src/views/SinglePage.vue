@@ -41,7 +41,7 @@
                 </div>
                 <div class="money col-12 d-flex align-items-stretch justify-content-center">${{$route.params.price}}</div>
                 <div class="lineList col-12 d-flex align-items-center justify-content-center"></div>
-                <div class="select-params row col-12 d-flex align-items-center justify-content-center">
+                <div class="select__params row col-12 d-flex align-items-center justify-content-center">
                     <label class="d-flex flex-column mx-4">CHOOSE COLOR
                         <select class="px-2 mt-2" v-model="color">
                             <option  

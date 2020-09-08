@@ -7,37 +7,37 @@
                 Bran
                 <span>d</span>
             </router-link >
-            <div class="input-group searchBrowse col-sm-8 col-lg-5 pr-sm-5 mb-1">
+            <div class="input-group search__browse col-sm-8 col-lg-5 pr-sm-5 mb-1">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center justify-content-center"
                             type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Browse
                     </button>
-                    <div class="dropdown-menu drMenuHeaderLeft">
-                        <a class="dropdown-item drMenuHeaderLeftLinkH pl-4" href="#">WOMAN</a>
+                    <div class="dropdown-menu dr__menu__left">
+                        <a class="dropdown-item left__link__h pl-4" href="#">WOMAN</a>
                         <div role="separator" class="dropdown-divider m-0"></div>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Dresses</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Tops</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Sweaters/Knits</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Jackets/Coats</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Blazers</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Denim</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Leggings/Pants</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Skirts/Shorts</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Accessories</a>
-                        <a class="dropdown-item drMenuHeaderLeftLinkH pl-4" href="#">MEN</a>
+                        <a class="dropdown-item left__link" href="#">Dresses</a>
+                        <a class="dropdown-item left__link" href="#">Tops</a>
+                        <a class="dropdown-item left__link" href="#">Sweaters/Knits</a>
+                        <a class="dropdown-item left__link" href="#">Jackets/Coats</a>
+                        <a class="dropdown-item left__link" href="#">Blazers</a>
+                        <a class="dropdown-item left__link" href="#">Denim</a>
+                        <a class="dropdown-item left__link" href="#">Leggings/Pants</a>
+                        <a class="dropdown-item left__link" href="#">Skirts/Shorts</a>
+                        <a class="dropdown-item left__link" href="#">Accessories</a>
+                        <a class="dropdown-item left__link__h pl-4" href="#">MEN</a>
                         <div role="separator" class="dropdown-divider m-0"></div>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Tees/Tank tops</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Shirts/Polos</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Sweaters</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Sweatshirts/Hoodies</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Blazers</a>
-                        <a class="dropdown-item drMenuHeaderLeftLink" href="#">Jackets/vests</a>
+                        <a class="dropdown-item left__link" href="#">Tees/Tank tops</a>
+                        <a class="dropdown-item left__link" href="#">Shirts/Polos</a>
+                        <a class="dropdown-item left__link" href="#">Sweaters</a>
+                        <a class="dropdown-item left__link" href="#">Sweatshirts/Hoodies</a>
+                        <a class="dropdown-item left__link" href="#">Blazers</a>
+                        <a class="dropdown-item left__link" href="#">Jackets/vests</a>
                     </div>
                 </div>
                 <input type="text" class="form-control" aria-label="Text input with dropdown button"
                        placeholder="Search for Item...">
-                <button><i class="fas fa-search"></i></button>
+                <button type="button"><i class="fas fa-search"></i></button>
             </div>
             <div class="rTop d-none d-sm-flex col-lg-3 ml-lg-auto justify-content-center justify-content-lg-end p-0 align-items-center">
                 <div class="basket__block" id="basket">

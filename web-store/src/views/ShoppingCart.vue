@@ -22,10 +22,10 @@
 
             <div class="headerLine"></div>
             <div class="container row d-flex justify-content-center justify-content-md-between mx-0 mt-5">
-                <div class="ccShoppingBut">
+                <div class="button_next_shop">
                     <button type="button">CLEAR SHOPPING CART</button>
                 </div>
-                <div class="ccShoppingBut">
+                <div class="button_next_shop">
                     <button type="button">CONTINUE SHOPPING</button>
                 </div>
             </div>

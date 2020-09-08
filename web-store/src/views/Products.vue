@@ -175,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="price col-12 col-lg-4 d-flex flex-column justify-content-center justify-content-md-start">
+                        <div class="product__price col-12 col-lg-4 d-flex flex-column justify-content-center justify-content-md-start">
                             <div class="m-0 p-0 col-12 d-flex flex-column"><h4
                                     class="d-flex justify-content-center justify-content-lg-start">Price</h4>
                                 <div class="range_slider my-2">
@@ -212,7 +212,7 @@
         </main>
         <div class="buttBanBGProduct">
             <div class="container">
-                <div class="row buttonBannerText d-flex justify-content-between align-items-center">
+                <div class="row button__banner__text d-flex justify-content-between align-items-center">
                     <div class="d-flex flex-column col-12 col-md-4 justify-content-center align-items-center text-justify pt-3 pt-lg-0">
                         <img src="https://raw.githubusercontent.com/IKolyas/static/master/GBProject/img/car.png"
                              alt="..."><h4>Free Delivery</h4>

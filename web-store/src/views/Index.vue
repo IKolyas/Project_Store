@@ -69,7 +69,7 @@
 
         </div>
         <div class="container d-flex justify-content-center align-items-center mb-5">
-            <router-link class="bBa__container" :to="{name: 'Products'}">
+            <router-link class="banner__container" :to="{name: 'Products'}">
                 <div>
                     <a 
                     class="d-flex justify-content-center align-items-center"

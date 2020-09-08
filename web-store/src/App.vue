@@ -19,9 +19,10 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Navigation from "./components/Navigation.vue";
-import Footer from "./components/Footer.vue";
+
+const Header = () => import('./components/Header.vue');
+const Navigation = () => import('./components/Navigation.vue');
+const Footer = () => import('./components/Footer.vue');
 
 export default {
   components: {
