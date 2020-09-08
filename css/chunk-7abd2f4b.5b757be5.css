@@ -1,0 +1,1 @@
+.basket-show{position:absolute;top:63px}.basket-show-enter-active{transition:all .3s ease}.basket-show-leave-active{transition:all .3s cubic-bezier(.7,.5,.8,1)}.basket-show-enter,.basket-show-leave-to{transform:translateY(-100px);opacity:0}
