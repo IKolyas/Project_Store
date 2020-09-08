@@ -19,7 +19,7 @@
                     :key="item.id"
                 />
             </div>
-            <div v-if="type === 'products'" class="row d-flex col-12 justify-content-around justify-content-lg-between p-0 my-2" >
+            <div v-if="type === 'products'" class="row d-flex col-12 justify-content-around justify-content-lg-between p-0 mx-0 my-2" >
                 <div class="sortProd row col-12 d-flex align-items-center px-3 my-3">
                         <button class="btn btn-outline-secondary py-0" type="button">Sort By</button>
                         <select class="custom-select col-2 px-1 mx-2  py-0">
@@ -35,20 +35,22 @@
                         </select>
                 
                 </div>
-                <div class="row d-flex col-12 p-0 my-2 justify-content-around justify-content-lg-between">
+                <div class="row d-flex col-12 p-0 mx-0 my-2 justify-content-around justify-content-lg-between">
+                    <transition-group name="list" class="row d-flex justify-content-center justify-content-lg-around">
                 <Item 
+                    class="list-item"
                     v-for="item in collections"
                     type="catalog"
                     :item="item"
                     :key="item.id"
                 />
+                 </transition-group>
                 </div>
                 <div class="paginationProduct col-12 d-flex flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between">
                         <nav aria-label="Page navigation example" class="p-0">
                             <ul class="pagination">
                                 <li class="page-item">
                                     <a class="page-link page-list" href="#" 
-                                    :disabled="pagination.currentPage === 0"
                                     @click.prevent="setPage(--pagination.currentPage)"
                                     >
                                         <span aria-hidden="true">&laquo;</span>
@@ -143,6 +145,17 @@
 .page-num:active {
     color: red !important;
     font-size: 700 !important;
+}
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 </style>

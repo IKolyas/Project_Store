@@ -7,7 +7,7 @@
                 </router-link>
                 <div class="ProdDetText d-flex flex-column ml-3 text-capitalize ">
                     <router-link class="item__name" :to="{name: 'SinglePage', params: item}">
-                        <h3>{{item.name}}</h3> 
+                        <h3 class="my-2">{{item.name}}</h3> 
                     </router-link>
                     <span>Color: 
                         <mark>{{item.color}}</mark>
